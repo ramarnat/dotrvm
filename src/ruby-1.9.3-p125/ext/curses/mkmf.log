@@ -1,0 +1,116 @@
+have_library: checking for tgetent() in -ltinfo... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ltinfo  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘tgetent’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))tgetent; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ltinfo  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: warning: implicit declaration of function ‘tgetent’
+/usr/bin/ld: cannot find -ltinfo
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { tgetent(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for tgetent() in -ltermcap... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ltermcap  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘tgetent’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))tgetent; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ltermcap  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5: warning: implicit declaration of function ‘tgetent’
+/usr/bin/ld: cannot find -ltermcap
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { tgetent(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for ncurses.h... -------------------- no
+
+"gcc -E -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:21: error: ncurses.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses.h>
+/* end */
+
+--------------------
+
+have_header: checking for ncurses/curses.h... -------------------- no
+
+"gcc -E -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:28: error: ncurses/curses.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ncurses/curses.h>
+/* end */
+
+--------------------
+
+have_header: checking for curses_colr/curses.h... -------------------- no
+
+"gcc -E -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:32: error: curses_colr/curses.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <curses_colr/curses.h>
+/* end */
+
+--------------------
+
+have_header: checking for curses.h... -------------------- no
+
+"gcc -E -I../../.ext/include/i686-linux -I../.././include -I../.././ext/curses -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:20: error: curses.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <curses.h>
+/* end */
+
+--------------------
+

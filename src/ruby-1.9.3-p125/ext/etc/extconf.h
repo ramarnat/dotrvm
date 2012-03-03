@@ -1,0 +1,13 @@
+#ifndef EXTCONF_H
+#define EXTCONF_H
+#define HAVE_GETLOGIN 1
+#define HAVE_GETPWENT 1
+#define HAVE_GETGRENT 1
+#define SYSCONFDIR "/root/.rvm/rubies/ruby-1.9.3-p125/etc"
+#define HAVE_STRUCT_PASSWD_PW_GECOS 1
+#define HAVE_ST_PW_GECOS 1
+#define HAVE_STRUCT_PASSWD_PW_PASSWD 1
+#define HAVE_ST_PW_PASSWD 1
+#define HAVE_STRUCT_GROUP_GR_PASSWD 1
+#define HAVE_ST_GR_PASSWD 1
+#endif

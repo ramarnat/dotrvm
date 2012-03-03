@@ -1,0 +1,280 @@
+have_library: checking for getpwnam() in -lsun... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -lsun  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getpwnam’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getpwnam; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -lsun  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getpwnam’
+/usr/bin/ld: cannot find -lsun
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getpwnam(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getlogin()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getlogin’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getlogin; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getlogin’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getlogin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getpwent()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getpwent’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getpwent; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getpwent’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getpwent(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getgrent()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getgrent’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getgrent; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getgrent’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getgrent(); return 0; }
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_gecos in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_gecos - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_change in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_change’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_change - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_quota in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_quota’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_quota - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_age in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_age’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_age - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_class in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_class’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_class - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_comment in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_comment’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_comment - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_expire in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_expire’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_expire - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_passwd in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_passwd - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct group.gr_passwd in grp.h... -------------------- yes
+
+"gcc -I../../.ext/include/i686-linux -I../.././include -I../.././ext/etc -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <grp.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct group*)0)->gr_passwd - (char *)0;
+/* end */
+
+--------------------
+

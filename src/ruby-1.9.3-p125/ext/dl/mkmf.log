@@ -1,0 +1,155 @@
+have_header: checking for dlfcn.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <dlfcn.h>
+/* end */
+
+--------------------
+
+have_library: checking for main() in -ldl... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlopen()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘dlopen’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlopen; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘dlopen’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { dlopen(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlclose()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘dlclose’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlclose; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘dlclose’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { dlclose(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlsym()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘dlsym’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlsym; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘dlsym’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { dlsym(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for dlerror()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘dlerror’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))dlerror; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/i686-linux -I../.././include -I../.././ext/dl -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC -fno-defer-pop -fno-omit-frame-pointer conftest.c  -L. -L../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic    -ldl  -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static -ldl  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘dlerror’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { dlerror(); return 0; }
+/* end */
+
+--------------------
+

@@ -1,0 +1,45 @@
+have_func: checking for ruby_add_suffix() in ruby/util.h... -------------------- no
+
+"gcc -o conftest -I../../../.ext/include/i686-linux -I../../.././include -I../../.././ext/-test-/add_suffix -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I../../../.ext/include/i686-linux -I../../.././include -I../../.././ext/-test-/add_suffix -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:7: error: ‘ruby_add_suffix’ undeclared (first use in this function)
+conftest.c:7: error: (Each undeclared identifier is reported only once
+conftest.c:7: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/util.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))ruby_add_suffix; return 0; }
+/* end */
+
+"gcc -o conftest -I../../../.ext/include/i686-linux -I../../.././include -I../../.././ext/-test-/add_suffix -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L../../.. -L/root/.rvm/usr/lib -Wl,-R/root/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/root/.rvm/rubies/ruby-1.9.3-p125/lib -L/root/.rvm/rubies/ruby-1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:7: warning: implicit declaration of function ‘ruby_add_suffix’
+/tmp/cczeQ4Nr.o: In function `t':
+/root/.rvm/src/ruby-1.9.3-p125/ext/-test-/add_suffix/conftest.c:7: undefined reference to `ruby_add_suffix'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/util.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { ruby_add_suffix(); return 0; }
+/* end */
+
+--------------------
+

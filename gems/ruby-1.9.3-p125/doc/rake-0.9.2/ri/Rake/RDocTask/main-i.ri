@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	main:EFI"Rake::RDocTask#main;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?Name of file to be used as the main, top level file of the;TI"RDoc. (default is none);T:
+@file0FI"lib/rake/rdoctask.rb;T

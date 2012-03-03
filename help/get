@@ -1,0 +1,37 @@
+
+Usage:
+
+  rvm get {stable|latest|x.y.z|head|master|branch|help} [--auto]
+
+Options:
+
+  stable      - git clone and install the latest RVM repository stable branch.
+
+  latest      - download and install the latest RVM release listed by
+                https://rvm.beginrescueend.com/releases/stable-version.txt
+
+  x.y.z       - download and install a specific RVM release
+
+  head        - git clone and install the latest RVM repository master/HEAD.
+  master
+
+  --auto      - automatically update shell profile files.
+
+  help        - Output this message.
+
+Branches:
+
+  branch <branch>
+  branch /<branch>
+  branch <repo>/
+  branch <repo>/<branch>
+
+  Defaults:
+
+    branch: master
+    repo:   wayneeseguin
+
+  Examples:
+
+    rvm get branch shoes   # will fetch branch shoes  from wayneeseguin/rvm repo
+    rvm get branch mpapis/ # will fetch branch master from mpapis/rvm       repo

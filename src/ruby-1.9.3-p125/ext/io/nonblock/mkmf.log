@@ -1,0 +1,34 @@
+have_macro: checking for O_NONBLOCK in fcntl.h... -------------------- yes
+
+"gcc -I../../../.ext/include/i686-linux -I../../.././include -I../../.././ext/io/nonblock -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <fcntl.h>
+4: /*top*/
+5: #ifndef O_NONBLOCK
+6: # error
+7: >>>>>> O_NONBLOCK undefined <<<<<<
+8: #endif
+/* end */
+
+--------------------
+
+have_macro: checking for F_GETFL in fcntl.h... -------------------- yes
+
+"gcc -I../../../.ext/include/i686-linux -I../../.././include -I../../.././ext/io/nonblock -I/root/.rvm/usr/include  -D_FILE_OFFSET_BITS=64   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <fcntl.h>
+4: /*top*/
+5: #ifndef F_GETFL
+6: # error
+7: >>>>>> F_GETFL undefined <<<<<<
+8: #endif
+/* end */
+
+--------------------
+

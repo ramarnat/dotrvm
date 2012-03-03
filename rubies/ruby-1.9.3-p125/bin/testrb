@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/root/.rvm/gems/ruby-1.9.3-p125'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/root/.rvm/gems/ruby-1.9.3-p125:/root/.rvm/gems/ruby-1.9.3-p125@global'
+ENV['PATH']='/root/.rvm/gems/ruby-1.9.3-p125/bin:/root/.rvm/gems/ruby-1.9.3-p125@global/bin:/root/.rvm/rubies/ruby-1.9.3-p125/bin:' + ENV['PATH']
+
+require 'test/unit'
+tests = Test::Unit::AutoRunner.new(true)
+tests.options.banner.sub!(/\[options\]/, '\& tests...')
+unless tests.process_args(ARGV)
+  abort tests.options.banner
+end
+files = tests.to_run
+$0 = files.size == 1 ? File.basename(files[0]) : files.to_s
+exit tests.run

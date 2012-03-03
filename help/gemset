@@ -1,0 +1,17 @@
+
+  Usage:
+
+    rvm gemset [action]
+    rvm --force gemset [action]
+
+  Action:
+
+    {import,export,create,copy,rename,empty,delete,name,dir,list,list_all,gemdir,install,pristine,clear,use,update,unpack,globalcache}
+
+  Description:
+
+    Commands for working with and manipulating gemsets within RVM.
+
+    Any command is run in context of current ruby/gemset; call 'rvm current' to find out which is used.
+
+    Note that 'system' supports only exporting/importing gems.
